@@ -6,6 +6,7 @@ import io.cucumber.java.Before;
 
 
 public class Hooks {
+
     @Before("@db")
 public void dbHook(){
         DbUtils.createConnection();

@@ -5,10 +5,10 @@ Feature: Three layer verification
     When User navigates to mySelf page
     Then User gets the UI info
 
+
   Scenario: Get info from API
     When User logs in BookIt API using "wcanadinea@ihg.com" and "waverleycanadine"
     Then User gets API information
-
 
   Scenario:Get the info from DB
     When User sends a query to database with "wcanadinea@ihg.com"

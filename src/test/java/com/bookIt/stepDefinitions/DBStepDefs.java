@@ -18,6 +18,7 @@ public class DBStepDefs {
 
     @When("User sends a query to database with {string}")
     public void user_sends_a_query_to_database_with(String email) {
+
         String query ="select firstname,lastname,role,name,location,batch_number\n" +
                 "                from users u join(select t.id,t.name,batch_number,location\n" +
                 "                from team t join campus c on t.campus_id = c.id) r\n" +
@@ -43,8 +44,9 @@ public class DBStepDefs {
         System.out.println("UIStep_defs.UiFullName = " + UIStep_defs.UiFullName);
         System.out.println("UIStep_defs.batch = " + UIStep_defs.batch);
 
+        //todo i need to fix this part
 
-        Assert.assertTrue(UIStep_defs.UiFullName.equals(DbFullname)&&APIStep_defs.ApiFirstName.equals(DbFullname));
+        Assert.assertTrue(UIStep_defs.UiFullName.equals(DbFullname)&&APIStep_defs.ApiFullName.equals(DbFullname));
         Assert.assertTrue(UIStep_defs.UiRole.equals(DbRole)&&APIStep_defs.ApiRole.equals(DbRole));
         // Assert.assertTrue(UIStep_defs.campus.equals(DbCampus)&&APIStep_defs.ApiCampus.equals(DbCampus));
         //Assert.assertTrue(UIStep_defs.batch.equals(DbBatch)&&APIStep_defs.ApiBatch.equals(DbBatch));

@@ -14,7 +14,7 @@ public class APIStep_defs {
 
     //public static String ApiLastName;
     public static String ApiRole;
-    public static String ApiFirstName;
+    public static String ApiFullName;
     public static String ApiTeam;
     public static String ApiCampus;
     public static String ApiBatch;
@@ -49,11 +49,11 @@ public class APIStep_defs {
                 .statusCode(200)
                 .extract().jsonPath();
 
-        ApiFirstName = jsonPath.getString("firstName")+" "+jsonPath.getString("lastName");
+        ApiFullName = jsonPath.getString("firstName")+" "+jsonPath.getString("lastName");
        // ApiLastName = jsonPath.getString("lastName"); full names shows in users profile
         ApiRole = jsonPath.getString("role");
 
-        System.out.println("ApiFirstName = " + ApiFirstName);
+        System.out.println("ApiFirstName = " + ApiFullName);
         //System.out.println("ApiLastName = " + ApiLastName);
         System.out.println("ApiRole = " + ApiRole);//student team member
 
